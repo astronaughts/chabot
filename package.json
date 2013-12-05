@@ -1,0 +1,28 @@
+{
+  "name": "chabot",
+  "version": "0.2.0",
+  "description": "Chabot is Web-hook receiver for ChatWork",
+  "main": "lib/chabot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "astronaughts",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "chabot": "bin/chabot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astronaughts/chabot.git"
+  },
+  "dependencies": {
+    "simple-cw-node": "~0.1.2",
+    "connect": "~2.11.2",
+    "connect-route": "~0.1.3",
+    "ejs": "~0.8.5",
+    "colors": "~0.6.2",
+    "commander": "~2.1.0",
+    "fs-extra": "~0.8.1"
+  }
+}

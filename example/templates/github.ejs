@@ -1,0 +1,19 @@
+プッシュのお知らせ♪
+[info]<%= head_commit.message %>
+[hr]変更のあったファイル：
+<% if (head_commit.added.length) { %>【追加】
+<% head_commit.added.forEach(function (file) { %>　<%= file %><% }) %>
+<% } else { %>【追加】
+　なし
+<% } %><% if (head_commit.removed.length) { %>【削除】
+<% head_commit.removed.forEach(function (file) { %>　<%= file %><% }) %>
+<% } else { %>【削除】
+　なし
+<% } %><% if (head_commit.modified.length) { %>【修正】
+<% head_commit.modified.forEach(function (file) { %>　<%= file %><% }) %>
+<% } else { %>【修正】
+　なし
+<% } %>[hr]リポジトリ：<%= repository.name %>
+コミット　：<%= head_commit.url %>
+コミッター：<%= head_commit.committer.username %>
+[/info]

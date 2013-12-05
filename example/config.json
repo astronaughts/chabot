@@ -1,0 +1,9 @@
+{
+    "port": 8080,
+    "bots": {
+        "github": {
+            "token": "YOUR_TOKEN",
+            "route": "/github/hooks/:roomid"
+        }
+    }
+}
