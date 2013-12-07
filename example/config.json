@@ -1,5 +1,5 @@
 {
-    "port": 8080,
+    "port": 5000,
     "bots": {
         "github": {
             "token": "YOUR_TOKEN",

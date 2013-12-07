@@ -8,4 +8,4 @@ var app = chabot()
     .use(middleware.bodyParser())
     .set();
 
-app.listen(config.port);
+app.listen(process.env.PORT || config.port);
