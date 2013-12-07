@@ -5,7 +5,7 @@ module.exports = function (chabot) {
 
     chabot.client
         .post(endpoint, {
-            body: chabot.render(template, chabot.data)
+            body: chabot.render(template, JSON.parse(chabot.data.payload));
         })
         .done(function (res) {
             chabot.log('done');
