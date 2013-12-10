@@ -39,7 +39,7 @@ $ chabot -h
  `chabot` アプリの作成は `chabot create` です。`-d` オプションで作成したい場所のディレクトリパスを指定します。
 
 ```bash
-chabot create -h
+$ chabot create -h
 
   Usage: create [options] [appname]
 
@@ -77,6 +77,7 @@ $ vi config.json
     "port": 5000,
     "bots": {
         "github": {
+            "hostname": "github.com",
             "token": "YOUR_TOKEN",
             "route": "/github/hooks/:roomid"
         }
@@ -127,12 +128,19 @@ bot が送信するメッセージのテンプレートファイルをここに�
 ```js
 module.exports = function (chabot) {
 
-    var endpoint = '/rooms/' + chabot.roomid + '/messages',
-        template = chabot.readTemplate('github.ejs');
+    // WebHook で受けたデータをセット
+    var payload = JSON.parse(chabot.data.payload);
+    // ChatWork API の endpoint をセット
+    var endpoint = '/rooms/' + chabot.roomid + '/messages';
+    // templats/ 内のメッセージテンプレートを読み込む
+    var template = chabot.readTemplate('github.ejs');
+    // WebHook で受けたデータでメッセージテンプレートを描画
+    var message_body = chabot.render(template, payload);
 
+    // ChatWork API でメッセージ送信
     chabot.client
         .post(endpoint, {
-            body: chabot.render(template, chabot.data)
+            body: message_body
         })
         .done(function (res) {
             chabot.log('done');
