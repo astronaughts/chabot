@@ -1,6 +1,6 @@
 {
   "name": "chabot",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Chabot is Web-hook receiver for ChatWork",
   "main": "lib/chabot.js",
   "scripts": {
