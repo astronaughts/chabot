@@ -1,0 +1,8 @@
+[info][title]プッシュのお知らせ♪[/title]
+リポジトリ：<%= repository.name %>
+コミッター：<%= user_name %>
+[hr]<% for(var i=0; i<commits.length; i++) {%>
+   <%= commits[i].message %>
+   <%= commits[i].url %>
+<% } %>
+[/info]
