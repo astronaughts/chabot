@@ -1,7 +1,7 @@
 module.exports = function (chabot) {
 
     // WebHook で受けたデータをセット
-    var payload = JSON.parse(chabot.data.payload);
+    var payload = chabot.data;
     // ChatWork API の endpoint をセット
     var endpoint = '/rooms/' + chabot.roomid + '/messages';
     // templats/ 内のメッセージテンプレートを読み込む
