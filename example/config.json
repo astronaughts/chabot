@@ -2,7 +2,6 @@
     "port": 5000,
     "bots": {
         "github": {
-            "hostname": "github.com",
             "token": "YOUR_TOKEN",
             "route": "/github/hooks/:roomid"
         }
